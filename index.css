@@ -1,0 +1,327 @@
+*{
+    border-spacing: border-box
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: bisque;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+h1 { font-size: 3.5em;}
+h2 { font-size: 2.7em;}
+h3 { font-size: 2em ;}
+p { font-size: 1.25em;
+    color: rgb(84, 71, 52);}
+ul {list-style: none}
+li { font-size: 1em;}
+
+.color-acento{color: chocolate; }
+
+
+button { 
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 12px 40px;
+    border-radius: 25px;
+/* border radius: bordes de los botones
+padding: distancia de los bordes a la palabra (arriba y abajo) */
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    color: white ; 
+    background-color: chocolate;
+}
+
+button:hover {
+    background-color: rgb(88, 45, 13);
+}
+
+.container{
+    max-width: 800px;
+    margin: auto;
+}
+
+header {
+    background: rgb(226, 192, 150);
+
+}
+
+header .logo{
+    margin: 0;
+    padding: 20px 15px;
+    font-weight: bold;
+    color: chocolate;
+    font-size: 1.7em;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+header a {
+    padding: 5px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+header a:hover {
+    color: chocolate;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh; /*view height (vh) se basa en la altura total de la
+    pantalla. En este caso es 90% de la pantalla, varía según dispositivos */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    )
+    ,url("media/Huesitos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-repeat es para que la imagen no se repita para ocupar todo
+    background-size es para que lo escale y cubra todo */
+     background-position: center center;
+     /*background position es la posición de la imágen*/
+}
+
+#hero h1{
+    color: white;
+}
+
+#hero button {
+    font-size: 1.5em;
+}
+
+#sobreNosotros .container{
+    text-align: center;
+    padding: 200px 20px;
+}
+
+#nuestrosProductos{
+    background-color: rgb(74, 37, 11);
+    color: white;
+    text-align: center;
+}
+#nuestrosProductos .container {
+    padding: 150px 15px
+}
+
+#nuestrosProductos h2 {
+ margin-top: 0px;
+ font-size: 3em;
+}
+
+#nuestrosProductos h3 {
+    padding-top: 20px;
+   }
+   
+#nuestrosProductos p{
+    display: none;
+}
+
+#nuestrosProductos .carta{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 25px;
+    margin: 25px 10px;
+    border-radius: 25px;
+}
+
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    )
+    ,url("media/Promo-1.jpg");
+}
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    )
+    ,url("media/Promo-2.jpg");
+}
+
+.carta:last-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    )
+    ,url("media/Promo-3.jpg");
+}
+
+#nuestrosProductos button {
+    margin-bottom: 25px;
+}
+
+#caracteristicas .container{
+    text-align: center;
+    padding: 250px 12px;
+    height: 15vh;
+}
+
+#caracteristicas li{
+    margin: 10px 10px;
+    font-weight: bold;
+}
+
+#compraAqui{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(237, 165, 114);
+    height: 80vh;
+}
+
+#compraAqui h2{
+    font-size: 9vw;
+
+}
+
+#compraAqui button{
+    font-size: 6vw;
+}
+
+footer{
+    background-color: rgb(230, 230, 230);
+}
+
+footer p{
+    margin: 0;
+    padding: 12px 5px;
+    color: rgb(100, 100, 100);
+}
+
+footer .container{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/*para que la conversión funcione se deben usar
+los mismos nombres, "header .container", no solo "container */
+@media (min-width: 720px){
+    header{
+        position: fixed;
+        width: 100%;
+        /*esto es para que la barra de arriba se
+        mantenga mientras scrolleas*/
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 10px;
+    }
+
+    #hero h1{
+        font-size: 3.5em;
+    }
+
+    #sobreNosotros .container{
+        display: flex;
+        justify-content: center;
+    }
+
+    #sobreNosotros .texto{
+        width: 800px;
+        max-width: 800px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #sobreNosotros .img-container{
+        background-image: url("media/Somos-Huesitos.jpg");
+        background-size:auto;
+        background-position: center center;
+        margin: auto;
+        height: 250px;
+        width: 400px;
+        max-width: 600px;
+    }
+
+    #nuestrosProductos .productos{
+        display: flex;
+        justify-content: center;
+    }
+    
+    #nuestrosProductos .carta{
+        box-shadow: 10px 10px 10px 
+        rgba(0, 0, 0, 0.5);
+    }
+
+    #nuestrosProductos p{
+        display: block;
+        font-size: 0.75em;
+        color: white;
+    }
+
+    #nuestrosProductos button{
+        padding: 10px 30px;
+        font-size: 1em;
+        width: max-content;
+    }
+
+    #caracteristicas{
+        background-image: url("media/Perro-Saludable.jpg");
+        background-repeat: no-repeat;
+        background-size: 450px 300px;        background-position: calc(100vw - 350px) 200px;
+        padding-right: 250px;
+    }
+
+    #caracteristicas .container{
+        text-align: initial;
+    }
+
+    #caracteristicas ul{
+        margin-left: 10px;
+    }
+
+    #compraAqui h2{
+        font-size: 4em;
+    }
+
+    #compraAqui button{
+        font-size: 3em;
+    }
+
+    #footer .container{
+        justify-content: flex-end;
+    }
+}
